@@ -1,0 +1,26 @@
+[
+  {
+    "id": "rules_drs_call_001",
+    "query": "How does umpire's call work in DRS?",
+    "expected_route": "rules",
+    "tags": ["rules", "drs"]
+  },
+  {
+    "id": "analysis_h2h_001",
+    "query": "Compare CSK and MI at Chepauk",
+    "expected_route": "analysis",
+    "tags": ["stats", "head_to_head", "venue"]
+  },
+  {
+    "id": "fantasy_build_001",
+    "query": "Build me a fantasy XI for CSK vs MI at Chepauk within 100 credits",
+    "expected_route": "team_building",
+    "tags": ["fantasy", "team_building"]
+  },
+  {
+    "id": "news_update_001",
+    "query": "Who is likely to miss tonight's XI for CSK?",
+    "expected_route": "news",
+    "tags": ["news", "injuries"]
+  }
+]

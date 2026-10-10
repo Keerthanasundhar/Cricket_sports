@@ -1,0 +1,131 @@
+player,team,role,credits
+Arjun Menon,Chennai Super Kings,WK,9.0
+Karthik Iyer,Chennai Super Kings,BAT,9.5
+Rohan Deshpande,Chennai Super Kings,BAT,9.0
+Vikram Naidu,Chennai Super Kings,BAT,8.5
+Sameer Pillai,Chennai Super Kings,AR,9.0
+Dhruv Chauhan,Chennai Super Kings,AR,8.5
+Yash Rathore,Chennai Super Kings,AR,8.0
+Imran Sheikh,Chennai Super Kings,BOWL,8.5
+Tejas Kulkarni,Chennai Super Kings,BOWL,9.0
+Nikhil Joshi,Chennai Super Kings,BOWL,8.0
+Harsh Vardhan,Chennai Super Kings,BOWL,8.0
+Manoj Reddy,Chennai Super Kings,BOWL,7.5
+Ishaan Bose,Chennai Super Kings,WK,7.5
+Aditya Nair,Mumbai Indians,WK,9.5
+Siddharth Rao,Mumbai Indians,BAT,10.0
+Kabir Malhotra,Mumbai Indians,BAT,9.0
+Pranav Desai,Mumbai Indians,BAT,8.5
+Neel Gupta,Mumbai Indians,AR,9.5
+Ayaan Khan,Mumbai Indians,AR,9.0
+Omkar Patil,Mumbai Indians,AR,8.0
+Rahul Bhatt,Mumbai Indians,BOWL,9.5
+Zaid Ansari,Mumbai Indians,BOWL,8.5
+Kunal Mehra,Mumbai Indians,BOWL,8.5
+Farhan Qureshi,Mumbai Indians,BOWL,8.0
+Jay Solanki,Mumbai Indians,BOWL,7.5
+Rishi Kapoor,Mumbai Indians,WK,7.5
+Bengaluru Synthetic 1,Royal Challengers Bengaluru,WK,8.0
+Bengaluru Synthetic 2,Royal Challengers Bengaluru,BAT,8.5
+Bengaluru Synthetic 3,Royal Challengers Bengaluru,BAT,8.0
+Bengaluru Synthetic 4,Royal Challengers Bengaluru,BAT,7.5
+Bengaluru Synthetic 5,Royal Challengers Bengaluru,AR,8.5
+Bengaluru Synthetic 6,Royal Challengers Bengaluru,AR,8.0
+Bengaluru Synthetic 7,Royal Challengers Bengaluru,AR,7.5
+Bengaluru Synthetic 8,Royal Challengers Bengaluru,BOWL,8.5
+Bengaluru Synthetic 9,Royal Challengers Bengaluru,BOWL,8.0
+Bengaluru Synthetic 10,Royal Challengers Bengaluru,BOWL,7.5
+Bengaluru Synthetic 11,Royal Challengers Bengaluru,BOWL,7.5
+Bengaluru Synthetic 12,Royal Challengers Bengaluru,BOWL,7.0
+Bengaluru Synthetic 13,Royal Challengers Bengaluru,WK,7.0
+Kolkata Synthetic 1,Kolkata Knight Riders,WK,8.0
+Kolkata Synthetic 2,Kolkata Knight Riders,BAT,8.5
+Kolkata Synthetic 3,Kolkata Knight Riders,BAT,8.0
+Kolkata Synthetic 4,Kolkata Knight Riders,BAT,7.5
+Kolkata Synthetic 5,Kolkata Knight Riders,AR,8.5
+Kolkata Synthetic 6,Kolkata Knight Riders,AR,8.0
+Kolkata Synthetic 7,Kolkata Knight Riders,AR,7.5
+Kolkata Synthetic 8,Kolkata Knight Riders,BOWL,8.5
+Kolkata Synthetic 9,Kolkata Knight Riders,BOWL,8.0
+Kolkata Synthetic 10,Kolkata Knight Riders,BOWL,7.5
+Kolkata Synthetic 11,Kolkata Knight Riders,BOWL,7.5
+Kolkata Synthetic 12,Kolkata Knight Riders,BOWL,7.0
+Kolkata Synthetic 13,Kolkata Knight Riders,WK,7.0
+Delhi Synthetic 1,Delhi Capitals,WK,8.0
+Delhi Synthetic 2,Delhi Capitals,BAT,8.5
+Delhi Synthetic 3,Delhi Capitals,BAT,8.0
+Delhi Synthetic 4,Delhi Capitals,BAT,7.5
+Delhi Synthetic 5,Delhi Capitals,AR,8.5
+Delhi Synthetic 6,Delhi Capitals,AR,8.0
+Delhi Synthetic 7,Delhi Capitals,AR,7.5
+Delhi Synthetic 8,Delhi Capitals,BOWL,8.5
+Delhi Synthetic 9,Delhi Capitals,BOWL,8.0
+Delhi Synthetic 10,Delhi Capitals,BOWL,7.5
+Delhi Synthetic 11,Delhi Capitals,BOWL,7.5
+Delhi Synthetic 12,Delhi Capitals,BOWL,7.0
+Delhi Synthetic 13,Delhi Capitals,WK,7.0
+Hyderabad Synthetic 1,Sunrisers Hyderabad,WK,8.0
+Hyderabad Synthetic 2,Sunrisers Hyderabad,BAT,8.5
+Hyderabad Synthetic 3,Sunrisers Hyderabad,BAT,8.0
+Hyderabad Synthetic 4,Sunrisers Hyderabad,BAT,7.5
+Hyderabad Synthetic 5,Sunrisers Hyderabad,AR,8.5
+Hyderabad Synthetic 6,Sunrisers Hyderabad,AR,8.0
+Hyderabad Synthetic 7,Sunrisers Hyderabad,AR,7.5
+Hyderabad Synthetic 8,Sunrisers Hyderabad,BOWL,8.5
+Hyderabad Synthetic 9,Sunrisers Hyderabad,BOWL,8.0
+Hyderabad Synthetic 10,Sunrisers Hyderabad,BOWL,7.5
+Hyderabad Synthetic 11,Sunrisers Hyderabad,BOWL,7.5
+Hyderabad Synthetic 12,Sunrisers Hyderabad,BOWL,7.0
+Hyderabad Synthetic 13,Sunrisers Hyderabad,WK,7.0
+Rajasthan Synthetic 1,Rajasthan Royals,WK,8.0
+Rajasthan Synthetic 2,Rajasthan Royals,BAT,8.5
+Rajasthan Synthetic 3,Rajasthan Royals,BAT,8.0
+Rajasthan Synthetic 4,Rajasthan Royals,BAT,7.5
+Rajasthan Synthetic 5,Rajasthan Royals,AR,8.5
+Rajasthan Synthetic 6,Rajasthan Royals,AR,8.0
+Rajasthan Synthetic 7,Rajasthan Royals,AR,7.5
+Rajasthan Synthetic 8,Rajasthan Royals,BOWL,8.5
+Rajasthan Synthetic 9,Rajasthan Royals,BOWL,8.0
+Rajasthan Synthetic 10,Rajasthan Royals,BOWL,7.5
+Rajasthan Synthetic 11,Rajasthan Royals,BOWL,7.5
+Rajasthan Synthetic 12,Rajasthan Royals,BOWL,7.0
+Rajasthan Synthetic 13,Rajasthan Royals,WK,7.0
+Punjab Synthetic 1,Punjab Kings,WK,8.0
+Punjab Synthetic 2,Punjab Kings,BAT,8.5
+Punjab Synthetic 3,Punjab Kings,BAT,8.0
+Punjab Synthetic 4,Punjab Kings,BAT,7.5
+Punjab Synthetic 5,Punjab Kings,AR,8.5
+Punjab Synthetic 6,Punjab Kings,AR,8.0
+Punjab Synthetic 7,Punjab Kings,AR,7.5
+Punjab Synthetic 8,Punjab Kings,BOWL,8.5
+Punjab Synthetic 9,Punjab Kings,BOWL,8.0
+Punjab Synthetic 10,Punjab Kings,BOWL,7.5
+Punjab Synthetic 11,Punjab Kings,BOWL,7.5
+Punjab Synthetic 12,Punjab Kings,BOWL,7.0
+Punjab Synthetic 13,Punjab Kings,WK,7.0
+Gujarat Synthetic 1,Gujarat Titans,WK,8.0
+Gujarat Synthetic 2,Gujarat Titans,BAT,8.5
+Gujarat Synthetic 3,Gujarat Titans,BAT,8.0
+Gujarat Synthetic 4,Gujarat Titans,BAT,7.5
+Gujarat Synthetic 5,Gujarat Titans,AR,8.5
+Gujarat Synthetic 6,Gujarat Titans,AR,8.0
+Gujarat Synthetic 7,Gujarat Titans,AR,7.5
+Gujarat Synthetic 8,Gujarat Titans,BOWL,8.5
+Gujarat Synthetic 9,Gujarat Titans,BOWL,8.0
+Gujarat Synthetic 10,Gujarat Titans,BOWL,7.5
+Gujarat Synthetic 11,Gujarat Titans,BOWL,7.5
+Gujarat Synthetic 12,Gujarat Titans,BOWL,7.0
+Gujarat Synthetic 13,Gujarat Titans,WK,7.0
+Lucknow Synthetic 1,Lucknow Super Giants,WK,8.0
+Lucknow Synthetic 2,Lucknow Super Giants,BAT,8.5
+Lucknow Synthetic 3,Lucknow Super Giants,BAT,8.0
+Lucknow Synthetic 4,Lucknow Super Giants,BAT,7.5
+Lucknow Synthetic 5,Lucknow Super Giants,AR,8.5
+Lucknow Synthetic 6,Lucknow Super Giants,AR,8.0
+Lucknow Synthetic 7,Lucknow Super Giants,AR,7.5
+Lucknow Synthetic 8,Lucknow Super Giants,BOWL,8.5
+Lucknow Synthetic 9,Lucknow Super Giants,BOWL,8.0
+Lucknow Synthetic 10,Lucknow Super Giants,BOWL,7.5
+Lucknow Synthetic 11,Lucknow Super Giants,BOWL,7.5
+Lucknow Synthetic 12,Lucknow Super Giants,BOWL,7.0
+Lucknow Synthetic 13,Lucknow Super Giants,WK,7.0

@@ -1,0 +1,52 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Test, coverage, and tooling caches
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Streamlit and local editor state
+.streamlit/secrets.toml
+.vscode/*
+!.vscode/tasks.json
+!.vscode/settings.json
+
+# Generated databases and vector indexes
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+data/chroma/
+data/cricsheet/
+
+# Downloaded public archives and raw datasets
+data/*.zip
+data/*.tar
+data/*.tar.gz
+data/raw/
+data/downloads/
+
+# Keep the small player metadata file if it is intentionally shared.
+!data/players.csv
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.bak
+Thumbs.db
+.DS_Store

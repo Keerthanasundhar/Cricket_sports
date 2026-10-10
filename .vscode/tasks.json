@@ -1,0 +1,516 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run requested command sequence",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"-c",
+				"import os,re,subprocess,datetime\ncmds=[['python','-m','cricket_analyst.db','--demo'],['python','-m','cricket_analyst.rag','--ingest'],['pytest','tests/'],['python','-m','cricket_analyst.main','Build me a fantasy XI for CSK vs MI at Chepauk within 100 credits']]\nr=re.compile(r'(?i)(api[_ -]?key|api[_ -]?secret|secret|token|password|passwd|authorization|bearer)(\\s*[:=]\\s*)[^\\s,;]+')\ndef clean(s): return r.sub(lambda m:m.group(1)+m.group(2)+'[REDACTED]',s)\nfor a in cmds:\n p=subprocess.run(a,cwd=os.getcwd(),capture_output=True,text=True,errors='replace')\n print('=== COMMAND: '+' '.join(a)+' ===')\n print('EXIT CODE: '+str(p.returncode))\n print('--- STDOUT BEGIN ---'); print(clean(p.stdout),end='' if p.stdout.endswith('\\\\n') or not p.stdout else '\\\\n'); print('--- STDOUT END ---')\n print('--- STDERR BEGIN ---'); print(clean(p.stderr),end='' if p.stderr.endswith('\\\\n') or not p.stderr else '\\\\n'); print('--- STDERR END ---')"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run db demo",
+			"type": "shell",
+			"command": "python -m cricket_analyst.db --demo",
+			"problemMatcher": []
+		},
+		{
+			"label": "Run rag ingest",
+			"type": "shell",
+			"command": "python -m cricket_analyst.rag --ingest",
+			"problemMatcher": []
+		},
+		{
+			"label": "Run pytest suite",
+			"type": "shell",
+			"command": "pytest tests/",
+			"problemMatcher": []
+		},
+		{
+			"label": "Run fantasy XI query",
+			"type": "shell",
+			"command": "python -m cricket_analyst.main \"Build me a fantasy XI for CSK vs MI at Chepauk within 100 credits\"",
+			"problemMatcher": []
+		},
+		{
+			"label": "List runtime artifact metadata",
+			"type": "shell",
+			"command": "cmd /d /c \"for /r %f in (*.db *.sqlite *.sqlite3) do @for %%A in (\\\"%f\\\") do @echo %f ^| %%~zA bytes ^| %%~tA\"",
+			"problemMatcher": []
+		},
+		{
+			"label": "List database artifact metadata",
+			"type": "shell",
+			"command": "cmd /d /c \"dir /s /-c /a-d *.db *.sqlite *.sqlite3\"",
+			"problemMatcher": []
+		},
+		{
+			"label": "List vector artifact metadata",
+			"type": "shell",
+			"command": "cmd /d /c \"dir /s /b /ad chroma* .chroma*\"",
+			"problemMatcher": []
+		},
+		{
+			"label": "User python version",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"--version"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "User create venv",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"-m",
+				"venv",
+				".venv"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "User install requirements",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"pip",
+				"install",
+				"-r",
+				"requirements.txt"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "User db demo",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"cricket_analyst.db",
+				"--demo"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "User rag ingest",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"cricket_analyst.rag",
+				"--ingest"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "User pytest",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"pytest",
+				"tests/"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "User fantasy query",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"cricket_analyst.main",
+				"Build me a fantasy XI for CSK vs MI at Chepauk within 100 credits"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Cricket Analyst frontend",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m streamlit run frontend.py --server.headless true",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Install frontend dependency",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m pip install streamlit",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Cricket Analyst frontend",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m streamlit run frontend.py --server.headless true",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Check local API configuration",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -c \"from dotenv import dotenv_values; v=dotenv_values('.env'); print('ANTHROPIC_API_KEY configured:', bool(v.get('ANTHROPIC_API_KEY')) and v.get('ANTHROPIC_API_KEY') != 'your_anthropic_api_key_here'); print('TAVILY_API_KEY configured:', bool(v.get('TAVILY_API_KEY')) and v.get('TAVILY_API_KEY') != 'your_tavily_api_key_here')\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Refresh cricket demo backend",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m cricket_analyst.db --demo; if ($?) { .venv\\Scripts\\python.exe -m cricket_analyst.rag --ingest }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Initialize cricket demo database",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m cricket_analyst.db --demo",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Ingest cricket knowledge base",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m cricket_analyst.rag --ingest",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Start refreshed cricket frontend",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m streamlit run frontend.py --server.headless true --server.port 8502",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Install Groq integration",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m pip install langchain-groq",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Update local Groq configuration",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -c \"from pathlib import Path; p=Path('.env'); lines=p.read_text(encoding='utf-8').splitlines() if p.exists() else []; kept=[x for x in lines if not x.startswith('ANTHROPIC_API_KEY=') and not x.startswith('CRICKET_MODEL=')]; has=any(x.startswith('GROQ_API_KEY=') for x in kept); kept.append('CRICKET_MODEL=llama-3.3-70b-versatile'); p.write_text('\\n'.join(kept)+'\\n', encoding='utf-8'); print('GROQ_API_KEY present:', has); print('Anthropic configuration removed: True')\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Groq integration import",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -c \"from cricket_analyst.graph import build_graph; from cricket_analyst.config import MODEL; print('Groq integration import: OK'); print('Model:', MODEL)\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Start Groq cricket frontend",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m streamlit run frontend.py --server.headless true --server.port 8503",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Refresh cricket demo data",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m cricket_analyst.db --demo",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Groq environment",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -c \"import os; from dotenv import load_dotenv; load_dotenv(); k=os.getenv('GROQ_API_KEY',''); print('GROQ_API_KEY configured:', bool(k) and k != 'your_groq_api_key_here'); print('Model:', os.getenv('CRICKET_MODEL','llama-3.3-70b-versatile'))\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run cricket analyst app",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m streamlit run frontend.py --server.headless true --server.port 8504",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Reproduce Groq analyst error",
+			"type": "shell",
+			"command": "$env:PYTHONPATH='.'; .venv\\Scripts\\python.exe -c \"import asyncio; from dotenv import load_dotenv; load_dotenv(); from langchain_mcp_adapters.client import MultiServerMCPClient; from cricket_analyst.graph import build_graph; async def main(): client=MultiServerMCPClient({'cricket': {'command': __import__('sys').executable, 'args': ['-m','cricket_analyst.mcp_server'], 'transport':'stdio'}}); g=build_graph(await client.get_tools()); print(await g.ainvoke({'query': \\\"How does umpire's call work in DRS?\\\"})); asyncio.run(main())\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Groq backend probe",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe _probe_groq.py",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Update active Groq model",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -c \"from pathlib import Path; p=Path('.env'); lines=p.read_text(encoding='utf-8').splitlines(); lines=[x for x in lines if not x.startswith('CRICKET_MODEL=')]; lines.append('CRICKET_MODEL=meta-llama/llama-4-scout-17b-16e-instruct'); p.write_text('\\n'.join(lines)+'\\n', encoding='utf-8'); print('Updated CRICKET_MODEL without printing secrets')\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify Groq analyst response",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe _probe_groq.py",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "List available Groq models",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -c \"import os; from dotenv import load_dotenv; from groq import Groq; load_dotenv(); print('\\n'.join(m.id for m in Groq(api_key=os.environ['GROQ_API_KEY']).models.list().data))\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Set available Groq model",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -c \"from pathlib import Path; p=Path('.env'); lines=[x for x in p.read_text(encoding='utf-8').splitlines() if not x.startswith('CRICKET_MODEL=')]; lines.append('CRICKET_MODEL=openai/gpt-oss-120b'); p.write_text('\\n'.join(lines)+'\\n',encoding='utf-8'); print('Set active Groq model')\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify active Groq model",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe _probe_groq.py",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Restart working cricket frontend",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m streamlit run frontend.py --server.headless true --server.port 8505",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Reproduce comparison question",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe _probe_question.py",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify unknown team response",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe _probe_question.py",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Start fixed cricket frontend",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m streamlit run frontend.py --server.headless true --server.port 8506",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Generate synthetic cricket dataset",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m cricket_analyst.db --demo",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify synthetic cricket data",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -c \"import csv,sqlite3; from cricket_analyst.stats import resolve_team; c=sqlite3.connect('data/cricket.db'); print('Teams:', c.execute('select count(*) from (select team1 t from matches union select team2 from matches)').fetchone()[0]); print('Matches:', c.execute('select count(*) from matches').fetchone()[0]); print('Players:', sum(1 for _ in open('data/players.csv', encoding='utf-8'))-1); print('RCB resolves to:', resolve_team('rcb')); print('KKR resolves to:', resolve_team('kkr')); c.close()\"; .venv\\Scripts\\python.exe -m pytest tests/test_core.py -q",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run expanded cricket frontend",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m streamlit run frontend.py --server.headless true --server.port 8507",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Test scope guardrails",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -c \"from cricket_analyst.guardrails import is_obviously_out_of_scope; print('hi:', is_obviously_out_of_scope('hi')); print('college:', is_obviously_out_of_scope('can you tell me about kongu engineering college')); print('cricket:', is_obviously_out_of_scope('compare CSK vs MI'))\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Download Cricsheet real data",
+			"type": "shell",
+			"command": "New-Item -ItemType Directory -Force data\\cricsheet | Out-Null; curl.exe -L --fail --retry 2 https://cricsheet.org/downloads/all_json.zip -o data\\cricsheet\\all_json.zip; Expand-Archive -Force data\\cricsheet\\all_json.zip data\\cricsheet\\json; Write-Output 'Cricsheet archive downloaded and extracted'",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Download Cricsheet real data",
+			"type": "shell",
+			"command": "cmd /c \"if not exist data\\cricsheet mkdir data\\cricsheet && curl.exe -L --fail --retry 2 https://cricsheet.org/downloads/all_json.zip -o data\\cricsheet\\all_json.zip && powershell.exe -NoProfile -Command Expand-Archive -Force data\\cricsheet\\all_json.zip data\\cricsheet\\json\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Fetch Cricsheet archive",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -c \"import urllib.request; from pathlib import Path; p=Path('data/cricsheet'); p.mkdir(parents=True,exist_ok=True); urllib.request.urlretrieve('https://cricsheet.org/downloads/all_json.zip',p/'all_json.zip'); print('downloaded')\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Fetch Cricsheet archive",
+			"type": "shell",
+			"command": "cmd /c \"if not exist data\\cricsheet mkdir data\\cricsheet && curl.exe -k -L --fail --retry 2 https://cricsheet.org/downloads/all_json.zip -o data\\cricsheet\\all_json.zip\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate Cricsheet importer",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m py_compile cricket_analyst\\db.py; if %ERRORLEVEL% EQU 0 echo Cricsheet importer syntax: OK",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate Cricsheet importer syntax",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m py_compile cricket_analyst\\db.py",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Download public cricket archives",
+			"type": "shell",
+			"command": "curl.exe -k -L --fail --retry 2 https://cricsheet.org/downloads/t20s_json.zip -o data\\t20s_json.zip",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Extract public cricket archive",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -c \"from pathlib import Path; import zipfile; src=Path('data/t20s_json.zip'); dst=Path('data/cricsheet/json'); dst.mkdir(parents=True,exist_ok=True); zipfile.ZipFile(src).extractall(dst); print('Extracted JSON files:',len(list(dst.glob('*.json'))))\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Download international cricket archives",
+			"type": "shell",
+			"command": "curl.exe -k -L --fail --retry 2 https://cricsheet.org/downloads/odis_json.zip -o data\\odis_json.zip",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Extract ODI cricket archive",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -c \"from pathlib import Path; import zipfile; src=Path('data/odis_json.zip'); dst=Path('data/cricsheet/json'); dst.mkdir(parents=True,exist_ok=True); zipfile.ZipFile(src).extractall(dst); print('Total JSON files:',len(list(dst.glob('*.json'))))\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Import real cricket dataset",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m cricket_analyst.db --cricsheet-dir data\\cricsheet\\json",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Complete real cricket import",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m cricket_analyst.db --cricsheet-dir data\\cricsheet\\json",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Download test cricket archive",
+			"type": "shell",
+			"command": "curl.exe -k -L --fail --retry 2 https://cricsheet.org/downloads/tests_json.zip -o data\\tests_json.zip",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Extract and import test cricket",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -c \"from pathlib import Path; import zipfile; src=Path('data/tests_json.zip'); dst=Path('data/cricsheet/json'); zipfile.ZipFile(src).extractall(dst); print('JSON files:',len(list(dst.glob('*.json'))) )\"; .venv\\Scripts\\python.exe -m cricket_analyst.db --cricsheet-dir data\\cricsheet\\json",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Import all real cricket formats",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m cricket_analyst.db --cricsheet-dir data\\cricsheet\\json",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify real player statistics",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -c \"from cricket_analyst import stats; print('Virat Kohli:', stats.resolve_player('Virat Kohli')); r=stats.player_stats('Virat Kohli'); print('Player:',r.get('player')); print('Batting innings:',r.get('batting',{}).get('innings')); print('Fantasy matches:',r.get('fantasy',{}).get('matches')); print('Teams:',len({x[0] for x in stats.connect().execute('select team1 from matches union select team2 from matches').fetchall()}))\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run real data frontend",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m streamlit run frontend.py --server.headless true --server.port 8508",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Verify player comparison routing",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -c \"import asyncio,sys; from dotenv import load_dotenv; load_dotenv(); from langchain_mcp_adapters.client import MultiServerMCPClient; from cricket_analyst.graph import build_graph; async def run(): c=MultiServerMCPClient({'cricket':{'command':sys.executable,'args':['-m','cricket_analyst.mcp_server'],'transport':'stdio'}}); g=build_graph(await c.get_tools()); r=await g.ainvoke({'query':'virat vs rohit sharma'}); print('route:',r.get('route')); print('answer:',bool(r.get('answer'))); asyncio.run(run())\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify player comparison",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe _probe_player.py",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Restart player stats frontend",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m streamlit run frontend.py --server.headless true --server.port 8509",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Start fixed-port cricket frontend",
+			"type": "shell",
+			"command": ".venv\\Scripts\\python.exe -m streamlit run frontend.py",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Check GitHub staging safety",
+			"type": "shell",
+			"command": "git status --short; git check-ignore -v .env data\\cricket.db data\\chroma data\\t20s_json.zip data\\odis_json.zip data\\tests_json.zip; git check-ignore -v data\\players.csv || exit /b 1",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
